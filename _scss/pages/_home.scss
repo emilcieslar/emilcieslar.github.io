@@ -22,7 +22,7 @@
           -webkit-transform: translateX($spacing-s);
           -ms-transform: translateX($spacing-s);
           transform: translateX($spacing-s);
-          &::after {
+          .post-title::after {
             content:'\2192';
             margin-left: $spacing-xs;
             @media (max-width: 942px) {
@@ -42,6 +42,12 @@
       .inner {
         transition: all .15s ease-in;
       }
+
+      .excerpt {
+          margin-top: 20px;
+          font-size: 90%;
+          font-weight: 300;
+      }
     } // end .p-wrap
 
     time {
@@ -52,7 +58,8 @@
       @media (max-width: 942px) {
         display: block;
         width: auto;
-      }
+      };
+      font-family: $monospaced-family;
     }
 
     a {

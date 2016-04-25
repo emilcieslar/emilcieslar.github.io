@@ -12,10 +12,16 @@ title: Homepage
           <article class="inner">
             <time datetime="{{ post.date | date_to_xmlschema }}"
                 itemprop="datePublished">
-              {{ post.date | date_to_string }}
+              {{ post.date | date:"%d-%m-%Y" }}
             </time>
-            <p itemprop="name headline">{{ post.title }}</p>
+            <p itemprop="name headline" class="post-title">{{ post.title }}</p>
+
+            <div class="excerpt">
+                {{ post.excerpt }}
+            </div>
+
           </article>
+
         </div>
       </a>
     </li>
