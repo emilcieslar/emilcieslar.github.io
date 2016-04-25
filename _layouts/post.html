@@ -19,16 +19,25 @@ layout: default
 
         <h1 class="page-title" itemprop="name headline">{{ page.title }}</h1>
 
+        {% if page.subtitle %}
+        <p class="post-heading__subtitle">
+            {{ page.subtitle }}
+        </p>
+        {% endif %}
+
+        {% if page.date %}
         <ul class="tag-list">
             {% for tags in page.tags %}
             <li class="tag-list__item">{{ tags }}</li>
             {% endfor %}
         </ul>
+        {% endif %}
 
         <div itemprop="articleBody">
             {{ content }}
         </div>
 
+        {% if page.date %}
         <div
           class="fb-like"
           data-share="true"
@@ -38,6 +47,7 @@ layout: default
 
         <h3>Komentáře</h3>
         <div class="fb-comments" data-numposts="10" data-width="100%"></div>
+        {% endif %}
 
 
         <div class="feat share">
@@ -46,12 +56,12 @@ layout: default
 
         {% if page.next %}
         <a rel="next" href="{{ site.baseurl }}{{ page.next.url }}" id="next">
-            <span class="nav-title nav-title-next">newer</span> &rarr;
+            <span class="nav-title nav-title-next">Novější</span> &rarr;
         </a>
         {% endif %}
         {% if page.previous %}
         <a rel="prev" href="{{ site.baseurl }}{{ page.previous.url }}" id="prev">
-            &larr; <span class="nav-title nav-title-prev">older</span>
+            &larr; <span class="nav-title nav-title-prev">Starší</span>
         </a>
         {% endif %}
     </article>

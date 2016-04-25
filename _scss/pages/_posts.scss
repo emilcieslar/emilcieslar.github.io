@@ -6,16 +6,25 @@
     background: white;
     z-index: 1;
 
+    .fb-like {
+        margin-top: $spacing-xl;
+    }
+
+    .post-heading__subtitle {
+        text-align: center;
+    }
+
     .tag-list {
         display: block;
         overflow: hidden;
         clear: both;
         width: 100%;
         list-style: none;
+        text-align: center;
+        margin-bottom: $spacing-xl;
     }
 
         .tag-list__item {
-            float: left;
             padding: 5px 8px;
             background: $main-color;
             color: white;
@@ -23,6 +32,7 @@
             font-size: 90%;
             margin-right: 8px;
             list-style: inherit;
+            display: inline-block;
         }
 
     .single-content {
@@ -73,11 +83,10 @@
     }
 
     h1.page-title {
-        font-size: 180%;
         line-height: 135%;
         font-family: $font-family;
         text-align: center;
-        margin: 0 0 $spacing-m;
+        margin: 0 0 20px;
     }
 
     ul,

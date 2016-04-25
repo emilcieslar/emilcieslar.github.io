@@ -16,9 +16,11 @@ title: Homepage
             </time>
             <p itemprop="name headline" class="post-title">{{ post.title }}</p>
 
+            {% if post.subtitle %}
             <div class="excerpt">
-                {{ post.excerpt }}
+                {{ post.subtitle }}
             </div>
+            {% endif %}
 
           </article>
 
