@@ -7,6 +7,7 @@
     <script src="https://use.typekit.net/uva3gny.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <title>{{ site.name }} - {{ site.description }}</title>
+    <meta property="fb:app_id" content="146511829079673" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="content-language" content="en-gb" />
@@ -22,6 +23,46 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 
+    <!-- FACEBOOK PLUGINS -->
+    <script>
+        var page_like_or_unlike_callback = function(url, html_element) {
+            console.log("page_like_or_unlike_callback");
+            console.log(url);
+            console.log(html_element);
+        }
+
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '146511829079673',
+                xfbml      : true,
+                version    : 'v2.6'
+            });
+
+            // In your onload handler
+            FB.Event.subscribe('edge.create', page_like_or_unlike_callback);
+            FB.Event.subscribe('edge.remove', page_like_or_unlike_callback);
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v2.6&appId=146511829079673";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v2.6&appId=146511829079673";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <!-- END FACEBOOK PLUGINS -->
+
     <div class="off-canvas">
         <figure class="avatar">
             <img src="{{ site.baseurl }}/assets/img/avatar.jpg" alt="Picture" title="That's me, {{ site.author }}.">
@@ -30,7 +71,7 @@
             <h1>Zdravím, jmenuji se {{ site.author }}.</h1>
             <p>{{ site.author-bio }}</p>
             <p>
-                <a href="{{ site.baseurl }}/o-mne">Více o mne &rarr;</a>
+                <a href="{{ site.github.baseurl }}/o-mne">Více o mne &rarr;</a>
             </p>
         </div>
         <nav>
@@ -75,17 +116,17 @@
 
     <script src="{{ site.baseurl }}/js/main.js"></script>
     {% comment %} Google Analytics {% endcomment %}
-    {% if site.ga_tracking_id and site.ga_domain %}
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', '{{ site.ga_tracking_id }}', '{{ site.ga_domain }}');
-    ga('send', 'pageview');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63731196-3', 'auto');
+      ga('send', 'pageview');
+
     </script>
-    {% endif %}
 
 </body>
 </html>

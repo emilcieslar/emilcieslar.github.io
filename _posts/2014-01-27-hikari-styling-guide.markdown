@@ -2,17 +2,20 @@
 layout: post
 title:  "Styling guide for Hikari: best practices"
 date:   2014-01-27 16:57:51
+tags:
+- AngularJS
+- NodeJS
 ---
 
 But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.
 
->Good design is as little design as possible, said Dieter. Use quotations very carefully; especially if you don't understand them. 
+>Good design is as little design as possible, said Dieter. Use quotations very carefully; especially if you don't understand them.
 
 No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
 
 * Bullet points are so fancy
 * Easy to read, they make you look like a pro
-* Even when completely random 
+* Even when completely random
 
 In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided.
 

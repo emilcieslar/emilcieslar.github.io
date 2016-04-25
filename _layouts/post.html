@@ -6,6 +6,7 @@ layout: default
     <article class="single-content" itemscope itemtype="http://schema.org/BlogPosting">
 
         {% if page.date %}
+
         <div class="feat">
             <h5 class="page-date">
                 <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -13,19 +14,36 @@ layout: default
                 </time>
             </h5>
         </div>
+
         {% endif %}
+
         <h1 class="page-title" itemprop="name headline">{{ page.title }}</h1>
+
+        <ul class="tag-list">
+            {% for tags in page.tags %}
+            <li class="tag-list__item">{{ tags }}</li>
+            {% endfor %}
+        </ul>
+
         <div itemprop="articleBody">
             {{ content }}
         </div>
-        <div class="feat share">
-            <a href="http://twitter.com/share" class="popup">
-                <span class="icon-twitter"></span>
-            </a>
-            <a href="http://twitter.com/share" class="popup">
-                <span class="icon-facebook"></span>
-            </a>
+
+        <div
+          class="fb-like"
+          data-share="true"
+          data-width="450"
+          data-show-faces="true">
         </div>
+
+        <h3>Komentáře</h3>
+        <div class="fb-comments" data-numposts="10" data-width="100%"></div>
+
+
+        <div class="feat share">
+
+        </div>
+
         {% if page.next %}
         <a rel="next" href="{{ site.baseurl }}{{ page.next.url }}" id="next">
             <span class="nav-title nav-title-next">newer</span> &rarr;
