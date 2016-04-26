@@ -24,7 +24,7 @@ Person.age = 26;
 console.log(Person);
 {% endhighlight %}
 
-Co byste čekali, že vytiskne první `console.log()` a co ten druhý? Možná hádáte, že ten první vytiskne objekt Person s jednou property a to `name`. Bohužel tomu ale tak není. První, stejně tak jako druhý vytiskne objekt `Person` obsahující jak `name`, tak `age`. Proč je tomu tak?
+Co byste čekali, že vytiskne první `console.log()` a co ten druhý? Možná hádáte, že ten první vytiskne objekt `Person` s jednou property a to `name`. Bohužel tomu ale tak není. První, stejně tak jako druhý vytiskne objekt `Person` obsahující jak `name`, tak `age`. Proč je tomu tak?
 
 Při tisknutí tohoto objektu do konzole proběhne určité zpoždění, během kterého se již do objektu `Person` přiřadil i věk. Dalo by se tedy říci, že konzole vytiskne v podstatě živou referenci na objekt `Person` a tudiž změny po tisku na tomto objektu se objeví i v konzoli.
 
@@ -37,7 +37,7 @@ Person = {
 	name: 'Emil Cieslar'
 };
 
-JSON.stringify(Person);
+console.log( JSON.stringify(Person) );
 
 Person.age = 26;
 
