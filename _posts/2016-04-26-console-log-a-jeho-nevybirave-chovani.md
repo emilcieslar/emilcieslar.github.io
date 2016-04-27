@@ -28,10 +28,10 @@ Co byste čekali, že vytiskne první `console.log()` a co ten druhý? Možná h
 
 Při tisknutí tohoto objektu do konzole může proběhnou určité zpoždění, během kterého se již do objektu `Person` přiřadil i `age`. Přesněji řečeno, konzole může fungovat *asynchronně*.
 
-### Tisíc prohlížečů, tisíc názorů
+## Tisíc prohlížečů, tisíc názorů
 Tento nečekaný efekt se nemusí stát vždy. Vzhledem k tomu, že `console.log()` není součástí specifikace `JavaScriptu`, naopak je definován takzvaným *hosting environment*, což je v podstatě prohlížeč. Každý prohlížeč si ho může definovat jak chce. A tak například v Chrome je `console.log()` asynchronní, tzn. že neproběhne okamžitě když ho zavoláme, ale je přiřazen do smyčky procesů (`event loop`) a čeká až na něho příjde řada (důvodem je I/O, které je pomalé a mohlo by blokovat prohlížeč). Mezi tím se ale může `Person` objekt změnit a tím pádem se jeho změny projeví i v `consoli`. Zajímavé, že? Je tady ale řešení?
 
-### Řešení
+## Řešení
 
 Pokud nám opravdu záleží na tom, co v daném okamžiku objekt `Person` obsahuje, musíme ho vytisknout pomocí `JSON.stringify()` funkce, která prakticky převede objekt v daném momentě do JSON řetězce a tím zajistí, že uvidíme jeho obsah v daném momentu. Zvažte následující kód.
 
@@ -55,12 +55,12 @@ Nevýhodou `JSON.stringify()` metody je, že vytiskne objekt vcelku škaredě, p
 
 Představa, že debugujete objekt, který má mnohem více údajů, tak se v tom člověk rychle ztratí.
 
-### Řešení no. 2
+## Řešení no. 2
 
 Použijte JavaScript debugger a breakpointy. O tom ale více příště.
 
 
-### Reference
+## Reference
 
 1. Vlastní zkušenost
 2. [Skvělý Kyle Simpson a jeho You Don't Know JS série knížek](https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/ch1.md#async-console)
