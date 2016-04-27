@@ -19,21 +19,21 @@ Proto jsem se rozhodl vytvořit si znovupoužitelnou komponentu, tzv. callout, k
 ### Dependency Injection
 Jako úplně první věc, na kterou se často opomíná, je přidání závislosti angular-ec-callout ve vaší AngularJS aplikaci, jako na následujícím příkladu.
 
-```javascript
+{% highlight js %}
 angular.module('yourApp', ['angular-ec-callout'])
-```
+{% endhighlight %}
 
 ### Directive
 Základ této komponenty je directive, která zobrazuje jednotlivé statusy (pokud jejich více) nebo pouze jeden status. Directive použijete kdekoliv ve své aplikaci, samozřejmě podle toho, kde chcete, aby se zobrazovala a také podle nastylování celé aplikace.
 
-```html
+{% highlight html %}
 <ec-callout></ec-callout>
-```
+{% endhighlight %}
 
 ### Service (služba)
 Následně použijete službu ecCalloutService, pomocí které pošlete "notifikaci", aby byl nový status přidán. Toto můžete provést kdekoliv ve vašem kódu, např. ve vašem Controlleru.
 
-```javascript
+{% highlight js %}
 .controller('yourController', ['ecCalloutService', function(CalloutService) {
   CalloutService.notify({
     type: 'alert',
@@ -43,7 +43,7 @@ Následně použijete službu ecCalloutService, pomocí které pošlete "notifik
     delete: false // setting this option to true would remove all displayed callouts
   });
 }]);
-```
+{% endhighlight %}
 
 ## Ke stažení
 Angular EC Callout se nejlépe instaluje přes bower (za pomocí příkazu `bower install angular-ec-callout --save`), můžete si samozřejmě ale stáhnout celý script a pouze ho uložit k vám do js složky. Nezapomeňte ale také stáhnout `angular-animations`, protože je tato komponenta používá pro zobrazení a schování statusů. Více informací se můžete dočíst na [github stránce](https://github.com/emilcieslar/angular-ec-callout).
