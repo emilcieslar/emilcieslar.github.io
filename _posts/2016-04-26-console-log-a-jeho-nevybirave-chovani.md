@@ -58,3 +58,9 @@ Představa, že debugujete objekt, který má mnohem více údajů, tak se v tom
 ### Řešení no. 2
 
 Použijte JavaScript debugger a breakpointy. O tom ale více příště.
+
+
+### Reference
+
+1. Vlastní zkušenost
+2. [Skvělý Kyle Simpson a jeho You Don't Know JS série knížek](https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/ch1.md#async-console)
