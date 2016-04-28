@@ -11,7 +11,7 @@ Když programujete a testujete web, většinu času jste na localhostu, kde je v
 
 Nenapadlo vás totiž, že když se příspěvky načítají, na webu je polovina homepage bílá a proto by bylo fajn tam dát nějaký hezký načítač a oznámení, že se příspěvky načítají a proto by mohl uživatel chvíli počkat. Proto jsou tady skvělé Chrome Developer Tools, kde můžete nastavit simulaci pomalejšího internetu, viz. obrázek níže.
 
-<img src="" alt="Google throttle" />
+<img src="{{ site.github.baseurl }}/assets/img/throttle-selection.png" alt="Google throttle selection" />
 
 Takto jednoduchým způsobem otestujete váš web při pomalém připojení a doladíte chybičky, kterých byste si jinak nevšimli.
 
