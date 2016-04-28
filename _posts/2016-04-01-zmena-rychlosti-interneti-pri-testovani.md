@@ -16,5 +16,5 @@ Nenapadlo vás totiž, že když se příspěvky načítají, na webu je polovin
 Takto jednoduchým způsobem otestujete váš web při pomalém připojení a doladíte chybičky, kterých byste si jinak nevšimli.
 
 ## Reference
-https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/network-conditions?hl=en
+[https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/network-conditions?hl=en](https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/network-conditions?hl=en)
 
