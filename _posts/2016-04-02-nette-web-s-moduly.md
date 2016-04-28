@@ -123,6 +123,14 @@ class RouterFactory
 
 V podstatě si vytvoříme dvě různé `RouteListy`, jednu pro Admina a druhou pro Front (zákazníka) a pak je přidáme do routeru. Nakonec ještě přidáme tzv. *fallback route*, jinými slovy, kdyby nic neklaplo, tak to půjde do Homepage:default. Malý detail na dovysvětlenou, pomocí new RouteList('Admin') specifikujeme název modulu. Takže module se musí jmenovat `AdminModule`, pokud ho chceme v RouterListu specifikovat jako Admin. Nemůžeme ho pojmenovat například `ModuleAdmin` nebo `AdminM`, prostě `AdminModule`. V začátcích jsem si totiž hrál s myšlenkou pojmenovávat moduly např. `ModuleAdmin` a `ModuleFront`, aby to hezky šlo v abecedě za sebou v adresářové struktuře, to byla ale zásadní chyba.
 
+## Bonus
+Abych vám ušetřil čas, tak jsem připravil boilerplate ([který naleznete na mém githubu](https://github.com/emilcieslar/nette-and-foundation-for-sites)) pro aplikaci s moduly. Je to ale spíše pro mé potřeby, takže to neušetří čas každému. Obsahuje totiž nejen nette, ale přidal jsem [Foundation for Sites](http://foundation.zurb.com/sites/docs/) a AngularJS. Foundation mám rád, protože šetří hodně času. Na rozdíl od Bootstrapu je čistější a je i menší (a taky přístupěnější). Neobsahuje tolik stylů, takže se hodí spíše pro projekty, kdy nechcete přepisovat tisíc předdefinovaných stylů od bootstrapu, ale potřebujete nadesignovat web app podle svých představ od začátku. Stačí vytvořit nový projekt pomocí příkazu `git clone`:
+
+{% highlight bash %}
+git clone https://github.com/emilcieslar/nette-and-foundation-for-sites.git
+{% endhighlight}
+
+
 ## Reference
 
 1. [Nette dokumentace](https://doc.nette.org/cs/2.3/presenters#toc-moduly)
