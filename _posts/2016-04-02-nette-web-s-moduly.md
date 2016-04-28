@@ -14,9 +14,9 @@ Při svých začátcích v Nette jsem nemohl najít článek o tom, jak postavit
 Hezký, ale až moc zjednodušený přehled o modulech nabízí přímo [dokumentace nette](https://doc.nette.org/cs/2.3/presenters#toc-moduly), ale jednak mi tento úsek příjde trochu neaktualizovaný (např. složka `templates` už v nette 2.3 je standardně součástí `presenters`), druhak je až moc zjednodušený a všeobecný pro začátečníky, kteří nerozumí ještě úplně struktuře nette. Proto blíže nastíním, jak tyto moduly zprovoznit.
 
 ### Struktura
-Důležitá je souborová adresářová struktura ve složce app:
+Důležitá je adresářová struktura ve složce app:
 
-{% highlight %}
+{% highlight php %}
 ├── AdminModule/
 │   ├── presenters/
 │   │   ├── templates/
@@ -31,8 +31,9 @@ Důležitá je souborová adresářová struktura ve složce app:
 ### Jednotlivé presentery v modulech
 Na co je třeba dát velký pozor jsou namespacy jednotlivých presenterů v modulech. Co tím myslím? Tak kupříkladu takto by mohl vypadat ukázkový BasePresenter.php ve FrontModule:
 
-{% highlight linenos php %}
-```
+{% highlight php linenos %}
+<?php
+
 namespace FrontModule; // FrontModule !!!!!
 
 use Nette;
@@ -46,43 +47,36 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
   }
 
 }
-```
 {% endhighlight %}
 
-Nejdůležitější je řádek 1, `namespace FrontModule;`. Tento řádek musí být v __KAŽDÉM__ presenteru ve FrontModulu. Možná už tušíte, že naopak v `AdminModule` tento řádek bude namespace `AdminModule;`. Na tyto detaily je třeba dát pozor, protože jinak vás bude bolet hlava z chyb, se kterými se setkáte.
+Nejdůležitější je řádek 3, `namespace FrontModule;`. Tento řádek musí být v __KAŽDÉM__ presenteru ve FrontModulu. Možná už tušíte, že naopak v `AdminModule` tento řádek bude namespace `AdminModule;`. Na tyto detaily je třeba dát pozor, protože jinak vás bude bolet hlava z chyb, se kterými se setkáte.
 
 ## Config
 Dále nesmíme opomenout na application mapping v config souboru. Defaultně máme nastaveno následovně.
 
-{% highlight %}
-```
+{% highlight neon %}
 application:
 	errorPresenter: Error
 	mapping:
 		*: App\*Module\Presenters\*Presenter
-```
 {% endhighlight %}
 
 Config ale změníme takto:
 
-{% highlight %}
-```
+{% highlight neon %}
 application:
 	errorPresenter: Error
 	mapping:
 		*: *Module\*Presenter
-```
 {% endhighlight %}
 
 Touto malou, ale důležitou úpravou zajistíme, že se moduly budou správně načítat. Dejte pozor také na konfiguraci `errorPresenter`, který momentálně směřuje do slepé uličky vzhledem k tomu, že máme nakonfigurované moduly. Pokud chceme mít společný `errorPresenter` v jednom modulu (např. ve `FrontModule`), změníme konfiguraci následovně.
 
-{% highlight %}
-```
+{% highlight neon %}
 application:
 	errorPresenter: Front:Error
 	mapping:
 		*: *Module\*Presenter
-```
 {% endhighlight %}
 
 Na [nette foru](https://forum.nette.org/cs/) můžete nalézt i řešení `errorPresenteru` pro každý modul zvlášť, to už ale nechám na vás.
@@ -90,8 +84,9 @@ Na [nette foru](https://forum.nette.org/cs/) můžete nalézt i řešení `error
 ### RouterFactory
 Poslední věcí je routování. Abychom byli schopni nasměrovat uživatele na dané moduly (a jejich presentery), potřebujeme několik úprav v našich routách. Následující kód ukazuje, jak by naše routy mohly vypadat.
 
-{% highlight linenos php %}
-```
+{% highlight php linenos %}
+<?php
+
 namespace App;
 
 use Nette;
@@ -124,7 +119,6 @@ class RouterFactory
 	}
 
 }
-```
 {% endhighlight %}
 
 V podstatě si vytvoříme dvě různé `RouteListy`, jednu pro Admina a druhou pro Front (zákazníka) a pak je přidáme do routeru. Nakonec ještě přidáme tzv. *fallback route*, jinými slovy, kdyby nic neklaplo, tak to půjde do Homepage:default. Malý detail na dovysvětlenou, pomocí new RouteList('Admin') specifikujeme název modulu. Takže module se musí jmenovat `AdminModule`, pokud ho chceme v RouterListu specifikovat jako Admin. Nemůžeme ho pojmenovat například `ModuleAdmin` nebo `AdminM`, prostě `AdminModule`. V začátcích jsem si totiž hrál s myšlenkou pojmenovávat moduly např. `ModuleAdmin` a `ModuleFront`, aby to hezky šlo v abecedě za sebou v adresářové struktuře, to byla ale zásadní chyba.
