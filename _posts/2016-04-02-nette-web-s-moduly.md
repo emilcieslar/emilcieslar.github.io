@@ -51,7 +51,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
 Nejdůležitější je řádek 3, `namespace FrontModule;`. Tento řádek musí být v __KAŽDÉM__ presenteru ve FrontModulu. Možná už tušíte, že naopak v `AdminModule` tento řádek bude namespace `AdminModule;`. Na tyto detaily je třeba dát pozor, protože jinak vás bude bolet hlava z chyb, se kterými se setkáte.
 
-## Config
+### Config
 Dále nesmíme opomenout na application mapping v config souboru. Defaultně máme nastaveno následovně.
 
 {% highlight neon %}
