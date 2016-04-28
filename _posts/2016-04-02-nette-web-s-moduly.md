@@ -128,7 +128,7 @@ Abych vám ušetřil čas, tak jsem připravil boilerplate ([který naleznete na
 
 {% highlight bash %}
 git clone https://github.com/emilcieslar/nette-and-foundation-for-sites.git
-{% endhighlight}
+{% endhighlight %}
 
 
 ## Reference
