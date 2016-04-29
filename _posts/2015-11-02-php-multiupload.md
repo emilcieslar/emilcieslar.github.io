@@ -5,7 +5,6 @@ subtitle: "Nahrávání více souborů/obrázků najednou pomocí jednoho formul
 date:   2015-11-02 16:57:51
 tags:
 - PHP
-- JavaScript
 ---
 
 ## Nahrávání několika obrázků najednou pomocí jednoho formuláře
@@ -13,7 +12,7 @@ tags:
 
 1. Mít několik inputů, každý pro jeden obrázek,
 2. použít staženou třídu nebo plugin, který má většinou složitou dokumentaci a stovky nastavení, protože se snaží řešit dalších tisíc věcí navíc,
-3. jednou z dalších možností je zkusit moji jednoduchou PHP třídu :)
+3. zkusit moji jednoduchou PHP třídu :)
 4. Určitě tady budou další cesty, ale to by pro ilustraci určitě stačilo.
 
 Dnes vám ukáži, jak lze jednoduše použít moji PHP třídu k tomu, abyste si již nikdy nemuseli trhat vlasy když nahráváte více souborů/obrázků pomocí jednoho formuláře. Nejprve si vytvoříme naprosto jednoduchý formulář.
@@ -31,6 +30,8 @@ Dnes vám ukáži, jak lze jednoduše použít moji PHP třídu k tomu, abyste s
 Zde je důležité si povšimnout, že input pro nahrávání souborů má na konci atribut `enctype`, který obsahuje `multipart/form-data` a v podstatě tím formuláři říkáme, že budeme posílat něco většího (soubory). Dále také jeho atribut `name` má hodnotu `files[]`, čímž dáváme najevo, že odeslaná data budou pole s názvem `files`. Formulář směřuje do souboru `test.php`, který má (nebo může mít, záleží na vás) následující kód.
 
 {% highlight php %}
+<?php
+
 require_once('Upload.php');
 // Initializujeme si třídu Upload a do jejího konstruktoru předáme pole files
 $upload = new Upload($_FILES['files']);
