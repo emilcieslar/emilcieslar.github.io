@@ -41,14 +41,14 @@ gulp.task('sass:watch', function () {
 
 Výše uvedený kód v podstatě zajistí, že soubory s příponou `.scss` ve složce `./sass`, která se nachází v našem projektu se kompilují do složky `./css`, která se také nachází v adresáři našeho projektu. Příkaz `gulp.watch` zajistí, že po spuštění `gulp sass` v okně našeho terminalu bude `gulp` automaticky sledovat složku `scss` a při jakékoliv změně a uložení se soubory automaticky opět v mžiku kompilují aniž bychom museli hnout prstem. Níže nastiňuji základní adresářovou strukturu projektu, který by obsahoval jak css tak scss soubory.
 
-{% highlight js %}
--- index.html
--- css/
--- -- style.css
--- scss/
--- -- style.scss
--- package.json
--- gulpfile.js
+{% highlight Plain text %}
+├── index.html
+├── css/
+│   ├── style.css
+├── scss/
+│   ├── style.scss
+├── package.json
+├── gulpfile.js
 {% endhighlight %}
 
 A to je vše co potřebujete ke kompilaci SCSS souborů do CSS pomocí Gulpu. Pokud máte jakékoliv dotazy, zanechte mi vzkaz v komentářích. Ať se daří při kódování.
