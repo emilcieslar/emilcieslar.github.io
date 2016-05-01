@@ -71,7 +71,7 @@ Na předchozím příkladu sčítám hodnoty `temperature` a `windSpeed`. Kdyby 
 #### b. Text (@)
 Druhý typ je *Text*, který jak už název napovídá pouze přenese hodnotu, která je vložená do atributu. Jinými slovy pokud vložíme do atributu třeba proměnnou, která obsahuje *String* `"Ahoj"` (nebo cokoliv), tak angular bude ignorovat, co je uvnitř proměnné, ale vrátí nám název proměnné. Takže tento typ se spíše hodí na přenášení staticky definovaných konfiguračních hodnot. Podívejme se na malou úpravu naší aplikace, která nám přidává konfiguraci naší *directive*
 
-<iframe width="100%" height="300" src="//jsfiddle.net/emilcieslar/fLqcxppk/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="//jsfiddle.net/emilcieslar/3s6b6g34/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 Určitě jste si všimli `ng-show="displaySum != 0"`. Proč nenapíši pouze `ng-show="displaySum"`? `0` je přece automaticky *false*. Problém je totiž v tom, že tento typ předání proměnné do *scope* všechno převádí na řetězec, tudíž `0` je zde v podstatě `"0"`, což podmínka vyhodnotí jako *true*, protože to není prázdný řetězec.
 
