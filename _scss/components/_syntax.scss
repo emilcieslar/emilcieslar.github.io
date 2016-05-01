@@ -1,11 +1,13 @@
 // Solarized Light Pygments CSS / Jekyll
 // https://gist.github.com/edwardhotchkiss/2005058
 
+$syntax-highlight-bg-color: #f3f5f6;
+
 .highlight {
-  border: 1px solid $border-color;
+  //border: 1px solid $border-color;
   border-radius: 3px;
   padding: 0;
-  background-color: $smoke-color;
+  background-color: $syntax-highlight-bg-color;
   font-size: 80%;
   margin: $spacing-m auto;
   overflow-x: auto;
@@ -21,6 +23,13 @@ code {
   font-family: $monospaced-family;
   font-size: 100%;
   line-height: 1.5;
+}
+
+// Inline syntax highlighting
+p > code.highlighter-rouge {
+    background: $syntax-highlight-bg-color;
+    padding: 0 8px;
+    border-radius: 3px;
 }
 
 .highlight .c { color: #586E75 } /* Comment */

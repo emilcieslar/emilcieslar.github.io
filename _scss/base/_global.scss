@@ -53,12 +53,12 @@ h3 {
 }
 
 h4 {
-  font-size: 80%;
-  font-weight: lighter;
+  font-size: 110%;
+  //font-weight: lighter;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin: $spacing-l 0 $spacing-xs;
-  color: lighten($text-color, 40%);
+  //color: lighten($text-color, 40%);
 }
 
 h5 {
