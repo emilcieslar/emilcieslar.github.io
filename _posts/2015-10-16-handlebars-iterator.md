@@ -38,11 +38,11 @@ Takové pole budeme iterovat pomocí handlebars *each*.
 Pokud bychom chtěli uvnitř *each* vypsat ještě jinou proměnnou, která je o úroveň výše vůči této proměnné, museli bychom použít `../` jako v následujícím příkladu.
 
 {% highlight handlebars %}
-&lbrace;&lbrace;#each users&rbrace;&rbrace;
-	Jméno: &lbrace;&lbrace;user.name&rbrace;&rbrace;
+{{#each users}}
+	Jméno: {{user.name}}
 
-	Dnešní datum: &lbrace;&lbrace;../date&rbrace;&rbrace;
-&lbrace;&lbrace;/each&rbrace;&rbrace;
+	Dnešní datum: {{../date}}&#123;
+{{/each}}
 {% endhighlight %}
 
 Tato maličkost je lehce přehlédnutelná a potom budete kroutit hlavou proč je ta proměnná `date` vlastně prázdná, když ji máte definovanou. Ať se daří při kódování.
