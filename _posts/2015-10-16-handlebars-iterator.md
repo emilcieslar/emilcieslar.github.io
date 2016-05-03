@@ -37,12 +37,12 @@ Takové pole budeme iterovat pomocí handlebars *each*.
 
 Pokud bychom chtěli uvnitř *each* vypsat ještě jinou proměnnou, která je o úroveň výše vůči této proměnné, museli bychom použít `../` jako v následujícím příkladu.
 
-```
-{{#each users}}
+{% highlight handlebars %}
+{% raw %}{{#each users}}
 	Jméno: {{user.name}}
 
 	Dnešní datum: {{../date}}
-{{/each}}
-```
+{{/each}}{% endraw %}
+{% endhighlight %}
 
 Tato maličkost je lehce přehlédnutelná a potom budete kroutit hlavou proč je ta proměnná `date` vlastně prázdná, když ji máte definovanou. Ať se daří při kódování.
