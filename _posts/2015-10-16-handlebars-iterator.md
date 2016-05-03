@@ -8,7 +8,7 @@ tags:
 - NodeJS
 ---
 
-Vždy když používáte `{{#each promenna}}...{{/each}}` nesmíte zapomenout na to, že uvnitř tohoto bloku se dostáváte do jiné **úrovně** proměnné. V praxi to znamená, že když například projíždím pomocí *each* pole `users`, uvnitř *each* už jsem uprostřed pole `users` a adresuji už nižší úroveň. Kdybych chtěl adresovat proměnnou ve vyšší úrovni, musím se na tu vyšší úroveň nejdříve dostat za použití `../`. Pojďme se podívat na příklad.
+Vždy když používáte `{% raw %}{{#each promenna}}...{{/each}}{% endraw %}` nesmíte zapomenout na to, že uvnitř tohoto bloku se dostáváte do jiné **úrovně** proměnné. V praxi to znamená, že když například projíždím pomocí *each* pole `users`, uvnitř *each* už jsem uprostřed pole `users` a adresuji už nižší úroveň. Kdybych chtěl adresovat proměnnou ve vyšší úrovni, musím se na tu vyšší úroveň nejdříve dostat za použití `../`. Pojďme se podívat na příklad.
 
 Tak například máme pole uživatelů `users`, které má více úrovní a vypadá v json následovně. Jako bonus k tomu máme ještě jednu proměnnou s dnešním datem `date`
 
@@ -30,18 +30,18 @@ date = '15/10/2015'
 Takové pole budeme iterovat pomocí handlebars *each*.
 
 {% highlight handlebars %}
-{{#each users}}
-	Jméno: {{user.name}}
-{{/each}}
+{% raw %}{{#each users}}
+  Jméno: {{user.name}}
+{{/each}}{% endraw %}
 {% endhighlight %}
 
 Pokud bychom chtěli uvnitř *each* vypsat ještě jinou proměnnou, která je o úroveň výše vůči této proměnné, museli bychom použít `../` jako v následujícím příkladu.
 
 {% highlight handlebars %}
 {% raw %}{{#each users}}
-	Jméno: {{user.name}}
+  Jméno: {{user.name}}
 
-	Dnešní datum: {{../date}}
+  Dnešní datum: {{../date}}
 {{/each}}{% endraw %}
 {% endhighlight %}
 
