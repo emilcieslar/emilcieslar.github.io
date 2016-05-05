@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "HTML entity v ::after pseudo-element"
+title:  "HTML entity v ::after pseudo-elementu"
 subtitle: "Jak vložit HTML entitu do contentu od pseudo-elementu"
 date:   2016-05-05 16:57:51
 tags:

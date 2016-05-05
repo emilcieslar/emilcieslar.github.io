@@ -26,7 +26,7 @@ code {
 }
 
 // Inline syntax highlighting
-p > code.highlighter-rouge {
+p > code.highlighter-rouge, li > code.highlighter-rouge {
     background: $syntax-highlight-bg-color;
     padding: 0 8px;
     border-radius: 3px;
