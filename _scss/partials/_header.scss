@@ -27,14 +27,37 @@ header {
         .site-logo {
             -webkit-transition: all .5s; /* Safari */
             transition: all .5s;
-            height: 20px;
-            margin-left: 2px;
+            height: 29px;
+            width: 58px;
+            vertical-align: middle;
+            display: inline-block;
+            margin-bottom: -6px;
+
+            background: url('../../assets/img/logo.png') 2px 0 no-repeat;
+            background-size: 56px 20px;
 
             @media (max-width: 942px) {
-              height: 18px;
+              height: 27px;
+              width: 52px;
+              background-image: url('../../assets/img/logo-medium.png');
+              background-size: 50px 18px;
             }
             @media (max-width: 642px) {
-              height: 14px;
+              height: 23px;
+              width: 42px;
+              background-image: url('../../assets/img/logo-small.png');
+              background-size: 39px 14px;
+            }
+
+            @media
+            only screen and (max-width: 642),
+            only screen and (-webkit-min-device-pixel-ratio: 2),
+            only screen and (   min--moz-device-pixel-ratio: 2),
+            only screen and (     -o-min-device-pixel-ratio: 2/1),
+            only screen and (        min-device-pixel-ratio: 2),
+            only screen and (                min-resolution: 192dpi),
+            only screen and (                min-resolution: 2dppx) {
+                background-image: url('../../assets/img/logo-small@2x.png');
             }
         }
 
@@ -46,7 +69,7 @@ header {
 
         &:hover {
             a {
-                padding-right: 20px;
+                //padding-right: 20px;
             }
         }
     } // end h1.title
