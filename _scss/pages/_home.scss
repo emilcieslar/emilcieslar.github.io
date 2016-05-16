@@ -75,7 +75,7 @@
   margin-top: 40px;
   color: lighten($text-color, 60%);
   text-align: center;
-  border: 1px solid $border-color;
+  //border: 1px solid $border-color;
 
   a, span {
     box-sizing: border-box;
@@ -86,7 +86,7 @@
 
     &:first-child {
       text-decoration: none;
-      border-right: 1px solid $border-color;
+      //border-right: 1px solid $border-color;
     }
   }
 
