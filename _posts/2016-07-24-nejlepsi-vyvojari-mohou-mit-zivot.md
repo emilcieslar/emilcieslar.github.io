@@ -57,4 +57,5 @@ Původní článek naleznete na [http://www.belenalbeza.com/](http://www.belenal
 Autorka tohoto článku je programátorkou ve společnosti Mozzila. Můžete ji kontaktovat na Twitteru [@ladybenko](https://twitter.com/ladybenko)
 
 ## Poznámky překladatele
+- I když je celý článek prakticky zaměřený na IT brandž a vývojáře, osobně si myslím, že tento trend se v dnešní době přenáší do dalších oborů. Ať už se jedná o účetní nebo doktory. Budu rád za jakékoliv připomínky od lidí s jiných oblastí.
 - S těmi přestávkami na oběd a čtení technických knížek nesouhlasím. Člověk by si měl udělat prostor jenom pro sebe a vnímat, že do sebe vůbec něco dává a přesně na to ta obědová pauza je. Vypnout na chvíli od programování a myslet na něco jiného.
