@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Mýtus opravdového JavaScriptového vývojáře"
-subtitle: "Překlad článku `The myth of the “Real JavaScript Developer”`"
+subtitle: "Výtah z přednášky na téma `The myth of the “Real JavaScript Developer”`"
 date: 2016-07-29 05:57:51
 tags:
 - Ze života
