@@ -113,7 +113,7 @@ class RouterFactory
 		$router[] = $admin;
 		$router[] = $front;
 
-		$router[] = new Route('<presenter/>action>[/<id>]', 'Homepage:default');
+		$router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
 
 		return $router;
 	}
