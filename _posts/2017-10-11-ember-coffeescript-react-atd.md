@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ember-CoffeeScript-React"
+title:  "Ember-CoffeeScript-React-JSX"
 subtitle: "Jak jsem poznal Ember, EmberData, CoffeScript, Emblem a React (a trochu Redux)"
 date:   2017-10-11 15:00:00
 tags:
@@ -9,6 +9,7 @@ tags:
 - CoffeeScript
 - Emblem
 - React
+- JSX
 - Redux
 ---
 
